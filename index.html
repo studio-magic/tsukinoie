@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>月の家 - 浄化サロン｜自然治癒力を引き出す</title>
+<meta name="description" content="僧侶の下で修行歴20年の職人が行う、心身と空間のお浄め体験。月の家であなた本来の自然治癒力を引き出します。">
+<style>
+  :root{
+    --gold:#d9b870;
+    --gold-light:#f3e3b6;
+    --bg-deep:#1b1530;
+    --cta-1:#b9a4d6;
+    --cta-2:#9d83c4;
+    --max:480px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+    background:radial-gradient(1200px 600px at 50% -10%, #3a2c5c 0%, var(--bg-deep) 55%, #120d22 100%);
+    background-attachment:fixed;
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* 中央のスマホ幅カラム */
+  .stage{
+    position:relative;
+    width:100%;
+    max-width:var(--max);
+    margin:0 auto;
+    background:#0e0a1a;
+    box-shadow:0 0 80px rgba(0,0,0,.55);
+    overflow:hidden;
+  }
+
+  /* セクション画像 */
+  .sec{display:block;position:relative;}
+  .sec img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-bottom:-1px;   /* 画像間の僅かな隙間を消す */
+  }
+
+  /* スクロールでふわっと表示 */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .9s ease, transform .9s ease;
+    will-change:opacity,transform;
+  }
+  .reveal.show{opacity:1;transform:none;}
+
+  /* 金粉キャンバス（画面に固定し、見えている範囲だけ描画＝軽量） */
+  #gold{
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    max-width:var(--max);
+    height:100vh;
+    height:100dvh;
+    pointer-events:none;
+    z-index:20;
+  }
+
+  /* 常時表示の予約ボタン */
+  .cta-bar{
+    position:fixed;
+    left:50%;
+    transform:translateX(-50%) translateY(120%);
+    bottom:0;
+    width:100%;
+    max-width:var(--max);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:linear-gradient(to top, rgba(14,10,26,.96) 60%, rgba(14,10,26,0));
+    z-index:30;
+    transition:transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .cta-bar.visible{transform:translateX(-50%) translateY(0);}
+  .cta-btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;padding:16px 20px;border-radius:999px;
+    background:linear-gradient(135deg,var(--cta-1),var(--cta-2));
+    color:#fff;font-size:1.15rem;letter-spacing:.12em;font-weight:600;text-decoration:none;
+    box-shadow:0 8px 24px rgba(157,131,196,.5), inset 0 1px 0 rgba(255,255,255,.35);
+    position:relative;overflow:hidden;
+  }
+  .cta-btn::after{
+    content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-20deg);
+    animation:shine 3.2s ease-in-out infinite;
+  }
+  @keyframes shine{0%{left:-60%;}55%{left:130%;}100%{left:130%;}}
+  .cta-btn .arrow{font-size:1rem;opacity:.9;}
+  .cta-price{
+    text-align:center;font-size:.78rem;letter-spacing:.08em;
+    color:var(--gold-light);margin-bottom:8px;text-shadow:0 1px 6px rgba(0,0,0,.6);
+  }
+  .cta-price b{font-size:1rem;color:#fff;}
+
+  /* フッター */
+  .foot{
+    max-width:var(--max);margin:0 auto;
+    padding:30px 20px calc(110px + env(safe-area-inset-bottom));
+    text-align:center;color:rgba(255,255,255,.5);
+    font-size:.72rem;letter-spacing:.1em;line-height:2;background:#0e0a1a;
+  }
+  .foot .moon{color:var(--gold);font-size:1rem;letter-spacing:.3em;margin-bottom:6px;display:block;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .cta-btn::after{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <canvas id="gold"></canvas>
+
+  <main class="stage" id="stage">
+    <a class="sec reveal" href="https://ws.formzu.net/sfgen/S40146328/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener"><img src="img/1.jpg" alt="散らばったエネルギーを整え本来の自分へ還る 心・身体・空間のお浄め体験" fetchpriority="high"></a>
+    <div class="sec reveal"><img src="img/2.jpg" alt="こんなお悩みありませんか？" loading="lazy"></div>
+    <div class="sec reveal"><img src="img/3.jpg" alt="その不調、原因が見えないだけかもしれません" loading="lazy"></div>
+    <div class="sec reveal"><img src="img/4.jpg" alt="浄化ってなに？ 心・身体・空間" loading="lazy"></div>
+    <div class="sec reveal"><img src="img/5.jpg" alt="月の家が選ばれる理由" loading="lazy"></div>
+    <div class="sec reveal"><img src="img/6.jpg" alt="お客様の声 1" loading="lazy"></div>
+    <div class="sec reveal"><img src="img/7.jpg" alt="お客様の声 2" loading="lazy"></div>
+    <div class="sec reveal"><img src="img/8.jpg" alt="お客様の声 3" loading="lazy"></div>
+    <div class="sec reveal"><img src="img/9.jpg" alt="お浄め体験の流れ" loading="lazy"></div>
+    <a class="sec reveal" id="cta" href="https://ws.formzu.net/sfgen/S40146328/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener"><img src="img/10.jpg" alt="自然治癒力を引き出す お浄め体験 1時間 1,111円（税込）今すぐ体験する" loading="lazy"></a>
+  </main>
+
+  <div class="foot">
+    <span class="moon">☽ 月の家 -浄化サロン-</span>
+    心・身体・空間を整えるお浄め体験<br>
+    © 月の家 TSUKI NO IE
+  </div>
+
+  <!-- 常時表示の予約ボタン -->
+  <div class="cta-bar" id="ctaBar">
+    <p class="cta-price">お浄め体験 1時間 <b>1,111円</b>（税込）</p>
+    <a class="cta-btn" href="https://ws.formzu.net/sfgen/S40146328/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener">今すぐ体験する <span class="arrow">›</span></a>
+  </div>
+
+<script>
+/* ===== スクロールでふわっと表示 ===== */
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('show');});
+  }else{
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); }
+      });
+    },{threshold:0.12});
+    els.forEach(function(e){io.observe(e);});
+  }
+})();
+
+/* ===== 予約ボタンの表示制御（少しスクロールしたら出現） ===== */
+(function(){
+  var bar = document.getElementById('ctaBar');
+  function onScroll(){
+    if(window.scrollY > window.innerHeight*0.6){ bar.classList.add('visible'); }
+    else{ bar.classList.remove('visible'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+/* ===== 金粉がパラパラ舞うアニメーション（軽量版） ===== */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+
+  var canvas = document.getElementById('gold');
+  var ctx = canvas.getContext('2d', {alpha:true});
+  var W=0,H=0,DPR=Math.min(window.devicePixelRatio||1,1.5);
+  var particles=[];
+
+  function rand(a,b){return a+Math.random()*(b-a);}
+
+  /* 金粒スプライトを一度だけ生成（毎フレームのグラデ生成を避けて高速化） */
+  var SP=48;
+  var sprite=document.createElement('canvas');
+  sprite.width=SP; sprite.height=SP;
+  (function(){
+    var s=sprite.getContext('2d');
+    var g=s.createRadialGradient(SP/2,SP/2,0,SP/2,SP/2,SP/2);
+    g.addColorStop(0,'rgba(255,247,214,1)');
+    g.addColorStop(0.25,'rgba(255,236,180,0.95)');
+    g.addColorStop(0.55,'rgba(229,190,110,0.45)');
+    g.addColorStop(1,'rgba(229,190,110,0)');
+    s.fillStyle=g;
+    s.beginPath(); s.arc(SP/2,SP/2,SP/2,0,Math.PI*2); s.fill();
+  })();
+
+  function resize(){
+    W = canvas.clientWidth;
+    H = canvas.clientHeight;
+    canvas.width = Math.round(W*DPR);
+    canvas.height = Math.round(H*DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+
+    // 画面に見える範囲だけなので少数でOK（密度一定）／金粉やや多め
+    var target = Math.round(W*H/8000);
+    target = Math.max(45, Math.min(target, 120));
+    if(particles.length < target){
+      while(particles.length < target) particles.push(newParticle(true));
+    }else{
+      particles.length = target;
+    }
+  }
+
+  function newParticle(anywhere){
+    var size = rand(2.5,7);
+    return {
+      x: rand(0,W),
+      y: anywhere ? rand(0,H) : rand(-30,-5),
+      size: size,
+      vy: rand(0.25,0.9)*(size/5),
+      vx: rand(-0.2,0.2),
+      sway: rand(0.3,1.1),
+      swaySpeed: rand(0.008,0.02),
+      phase: rand(0,Math.PI*2),
+      alpha: rand(0.35,0.9),
+      twinkle: rand(0.012,0.03),
+      tphase: rand(0,Math.PI*2)
+    };
+  }
+
+  var running=true;
+  function draw(){
+    if(!running) return;
+    ctx.clearRect(0,0,W,H);
+    ctx.globalCompositeOperation='lighter';
+    for(var i=0;i<particles.length;i++){
+      var p=particles[i];
+      p.phase += p.swaySpeed;
+      p.y += p.vy;
+      p.x += p.vx + Math.sin(p.phase)*p.sway*0.3;
+      p.tphase += p.twinkle;
+      if(p.y > H+12){ particles[i]=newParticle(false); continue; }
+      var tw = 0.55 + 0.45*Math.sin(p.tphase);
+      ctx.globalAlpha = Math.min(1, p.alpha*tw);
+      var s = p.size;
+      ctx.drawImage(sprite, p.x - s/2, p.y - s/2, s, s);
+    }
+    ctx.globalAlpha=1;
+    ctx.globalCompositeOperation='source-over';
+    requestAnimationFrame(draw);
+  }
+
+  // タブ非表示中は描画停止（省電力・軽量化）
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden){ running=false; }
+    else if(!running){ running=true; requestAnimationFrame(draw); }
+  });
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
