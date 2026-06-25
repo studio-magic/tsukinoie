@@ -46,6 +46,17 @@
     margin-bottom:-1px;   /* 画像間の僅かな隙間を消す */
   }
 
+  /* 画像内ボタンだけをリンク化する透明領域（ホットスポット） */
+  .hotspot{
+    position:absolute;
+    display:block;
+    z-index:10;
+    cursor:pointer;
+    /* 位置・大きさは各画像のボタンに合わせて個別指定 */
+    background:transparent;
+    border-radius:999px;
+  }
+
   /* スクロールでふわっと表示 */
   .reveal{
     opacity:0;
@@ -125,7 +136,10 @@
   <canvas id="gold"></canvas>
 
   <main class="stage" id="stage">
-    <a class="sec reveal" href="https://ws.formzu.net/sfgen/S40146328/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener"><img src="img/1.jpg" alt="散らばったエネルギーを整え本来の自分へ還る 心・身体・空間のお浄め体験" fetchpriority="high"></a>
+    <div class="sec reveal">
+      <img src="img/1.jpg" alt="散らばったエネルギーを戻し本来の自分へ還る 心・身体・空間のお浄め体験" fetchpriority="high">
+      <a class="hotspot" href="https://ws.formzu.net/sfgen/S40146328/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener" aria-label="今すぐ体験する" style="left:13%;top:79.5%;width:74%;height:9%;"></a>
+    </div>
     <div class="sec reveal"><img src="img/2.jpg" alt="こんなお悩みありませんか？" loading="lazy"></div>
     <div class="sec reveal"><img src="img/3.jpg" alt="その不調、原因が見えないだけかもしれません" loading="lazy"></div>
     <div class="sec reveal"><img src="img/4.jpg" alt="浄化ってなに？ 心・身体・空間" loading="lazy"></div>
@@ -134,7 +148,10 @@
     <div class="sec reveal"><img src="img/7.jpg" alt="お客様の声 2" loading="lazy"></div>
     <div class="sec reveal"><img src="img/8.jpg" alt="お客様の声 3" loading="lazy"></div>
     <div class="sec reveal"><img src="img/9.jpg" alt="お浄め体験の流れ" loading="lazy"></div>
-    <a class="sec reveal" id="cta" href="https://ws.formzu.net/sfgen/S40146328/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener"><img src="img/10.jpg" alt="自然治癒力を引き出す お浄め体験 1時間 1,111円（税込）今すぐ体験する" loading="lazy"></a>
+    <div class="sec reveal" id="cta">
+      <img src="img/10.jpg" alt="散らばったエネルギーを戻し本来の自分へ還る お浄め体験 1時間 1,111円（税込）今すぐ体験する" loading="lazy">
+      <a class="hotspot" href="https://ws.formzu.net/sfgen/S40146328/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener" aria-label="今すぐ体験する" style="left:24%;top:62.5%;width:60%;height:8%;"></a>
+    </div>
   </main>
 
   <div class="foot">
